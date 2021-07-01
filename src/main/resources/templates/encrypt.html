@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>MySite login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="/main.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <form class="form-signin mt-15" method="post" action="#" th:action="@{/}">
+            <h2 class="form-signin-heading text-center font-weight-bold mb-4">BCrypt</h2>
+            <p>
+                <input type="text" th:value="${password}" id="password" name="password" class="form-control green"
+                    placeholder="Password to Encode"
+                    autofocus="">
+            </p>
+            <button class="btn btn-lg btn-success btn-block mt-3" type="submit">Encode</button>
+        </form>
+
+        <div th:if="${hash != null}" class="goal row justify-content-center mt-5">
+            <p th:text="${hash}"></p>
+        </div>
+
+    </div>
+</body>
+</html>
