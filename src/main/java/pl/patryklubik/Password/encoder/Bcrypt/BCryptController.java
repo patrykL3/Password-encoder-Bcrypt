@@ -16,13 +16,13 @@ public class BCryptController {
 
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
 
-    @GetMapping("")
+    @GetMapping()
     public String encrypt(Model model) {
 
         return "encrypt";
     }
 
-    @PostMapping("")
+    @PostMapping()
     public String hashPassword(Model model, String password) {
 
         model.addAttribute("hash", passwordEncoder.encode(password));
